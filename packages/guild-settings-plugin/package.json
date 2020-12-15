@@ -1,0 +1,12 @@
+{
+  "name": "guild-settings-plugin",
+  "version": "0.0.1",
+  "description": "",
+  "author": "DaCurse",
+  "license": "GPL-3.0",
+  "scripts": {},
+  "dependencies": {
+    "pg": "^8.5.1",
+    "typeorm": "^0.2.29"
+  }
+}

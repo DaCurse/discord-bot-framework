@@ -5,16 +5,10 @@
   "author": "DaCurse",
   "license": "GPL-3.0",
   "scripts": {
-    "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "eslint \"src/**/*.ts\"",
+    "format": "prettier --write \"packages/**/src/**/*.ts\"",
+    "lint": "eslint \"packages/**/src/**/*.ts\"",
     "build": "tsc",
-    "start": "node dist/index",
-    "start:dev": "nodemon"
-  },
-  "dependencies": {
-    "discord.js": "^12.5.1",
-    "pg": "^8.5.1",
-    "typeorm": "^0.2.29"
+    "start": "node dist/index"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.9.1",
@@ -24,9 +18,8 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.2.0",
     "husky": "^4.3.6",
-    "nodemon": "^2.0.6",
+    "lerna": "^3.22.1",
     "prettier": "^2.2.1",
-    "sqlite3": "^5.0.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   },
