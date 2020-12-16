@@ -1,0 +1,7 @@
+import { COMMAND_METADTA as metadataConstants } from '../constants';
+import { CommandMetadata } from '../interfaces/metadata/command-metadata.interface';
+import { createMetadataDecorator } from './metadata.decorator';
+
+const metadataKeys = Object.values(metadataConstants);
+
+export const Command = createMetadataDecorator<CommandMetadata>(metadataKeys);

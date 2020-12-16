@@ -4,12 +4,17 @@ export const BASE_METADATA = {
 };
 
 export const MODULE_METADATA = {
-  ...BASE_METADATA,
   COMMANDS: 'commands',
   LISTENERS: 'listeners',
 };
 
 export const EVENT_LISTENER_METADATA = {
-  ...BASE_METADATA,
   EVENT_TYPE: 'eventType',
 };
+
+export const COMMAND_METADTA = {
+  ALIASES: 'aliases',
+  PERMISSIONS: 'permissions',
+};
+
+export const ARGS_PATTERN = 'args:pattern';

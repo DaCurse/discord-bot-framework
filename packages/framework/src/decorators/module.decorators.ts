@@ -1,7 +1,7 @@
 import { MODULE_METADATA as metadataConstants } from '../constants';
-import { ModuleMetadata } from '../interfaces/module-metadata.interface';
+import { ModuleMetadata } from '../interfaces/metadata/module-metadata.interface';
 import { createMetadataDecorator } from './metadata.decorator';
 
-const metadataKeys = [metadataConstants.COMMANDS, metadataConstants.LISTENERS];
+const metadataKeys = Object.values(metadataConstants);
 
 export const Module = createMetadataDecorator<ModuleMetadata>(metadataKeys);
