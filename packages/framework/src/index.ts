@@ -4,7 +4,7 @@ import { IntArg, StringArg } from './decorators/arg.decorator';
 import { Args } from './decorators/args.decorator';
 import { Command } from './decorators/command.decorator';
 import { EventListener } from './decorators/event-listener.decorator';
-import { Module } from './decorators/module.decorators';
+import { Module } from './decorators/module.decorator';
 import { CommandContext } from './interfaces/command-context.interface';
 import { parseArgs } from './utils/parse-args';
 
