@@ -5,14 +5,17 @@
   "author": "DaCurse",
   "license": "GPL-3.0",
   "scripts": {
+    "start": "ts-node ./src/index",
     "start:dev": "nodemon"
   },
   "dependencies": {
     "discord.js": "^12.5.1",
     "pg": "^8.5.1",
+    "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.29"
   },
   "devDependencies": {
+    "nodemon": "^2.0.6",
     "ts-node": "^9.1.1"
   }
 }
