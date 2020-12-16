@@ -1,9 +1,12 @@
 import 'reflect-metadata';
 import { BaseCommand } from './base-command';
+import { IntArg, StringArg } from './decorators/arg.decorator';
+import { Args } from './decorators/args.decorator';
 import { Command } from './decorators/command.decorator';
 import { EventListener } from './decorators/event-listener.decorator';
 import { Module } from './decorators/module.decorators';
 import { CommandContext } from './interfaces/command-context.interface';
+import { parseArgs } from './utils/parse-args';
 
 @EventListener({
   name: 'test-listener',
@@ -51,3 +54,16 @@ instance.run(4, mockCtx);
 instance.run([1, 2, 3], mockCtx);
 
 console.log(Reflect.getMetadata('aliases', commands[0]));
+
+@Args(/^(add|sub|mul|div) (\d+) (\d+)$/)
+class TestArgs {
+  @StringArg(0)
+  operation: string;
+  @IntArg(1)
+  n1: number;
+  @IntArg(2)
+  n2: number;
+}
+
+const args = parseArgs<TestArgs>(TestArgs, 'add 1 2');
+console.log(args);
