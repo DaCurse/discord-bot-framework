@@ -1,11 +1,14 @@
 import 'reflect-metadata';
 import { BaseCommand } from './base-command';
-import { IntArg, StringArg } from './decorators/arg.decorator';
-import { Args } from './decorators/args.decorator';
-import { Command } from './decorators/command.decorator';
-import { EventListener } from './decorators/event-listener.decorator';
-import { Module } from './decorators/module.decorator';
-import { CommandContext } from './interfaces/command-context.interface';
+import {
+  Args,
+  Command,
+  EventListener,
+  IntArg,
+  Module,
+  StringArg,
+} from './decorators';
+import { CommandContext } from './interfaces';
 import { parseArgs } from './utils/parse-args';
 
 @EventListener({
