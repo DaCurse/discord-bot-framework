@@ -12,7 +12,7 @@ export function createArgDecorator<T>(serializer: ArgSerializer<T>) {
     );
 }
 
-export const StringArg = createArgDecorator<string>((raw: string) => raw);
+export const Arg = createArgDecorator<string>((raw: string) => raw);
 export const IntArg = createArgDecorator<number>((raw: string) =>
   parseInt(raw, 10)
 );

@@ -1,12 +1,12 @@
 import 'reflect-metadata';
 import { BaseCommand } from './base-command';
 import {
+  Arg,
   Args,
   Command,
   EventListener,
   IntArg,
   Module,
-  StringArg,
 } from './decorators';
 import { CommandContext } from './interfaces';
 import { parseArgs } from './utils/parse-args';
@@ -60,7 +60,7 @@ console.log(Reflect.getMetadata('aliases', commands[0]));
 
 @Args(/^(add|sub|mul|div) (\d+) (\d+)$/)
 class TestArgs {
-  @StringArg(0)
+  @Arg(0)
   operation: string;
   @IntArg(1)
   n1: number;
