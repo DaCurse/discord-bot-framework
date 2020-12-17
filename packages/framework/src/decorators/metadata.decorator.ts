@@ -1,4 +1,4 @@
-import { BaseMetadata } from '../interfaces/metadata/base-metadata.interface';
+import { BaseMetadata } from '../interfaces';
 import { validateMetadataKeys } from '../utils/validate-metadata-keys';
 
 function applyMetadata<T extends BaseMetadata>(metadata: T, target: object) {

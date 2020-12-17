@@ -1,10 +1,15 @@
-type ArgSerializer<T> = (raw: string) => T;
+import { ArgMetadata, ArgSerializer } from '../interfaces';
 
 export function createArgDecorator<T>(serializer: ArgSerializer<T>) {
   return (matchIndex: number): PropertyDecorator => (
     target: object,
     propertyKey: string
-  ) => Reflect.defineMetadata(propertyKey, { serializer, matchIndex }, target);
+  ) =>
+    Reflect.defineMetadata(
+      propertyKey,
+      { serializer, matchIndex } as ArgMetadata<T>,
+      target
+    );
 }
 
 export const StringArg = createArgDecorator<string>((raw: string) => raw);
