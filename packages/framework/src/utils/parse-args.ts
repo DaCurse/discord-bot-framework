@@ -5,15 +5,19 @@ export function parseArgs<T extends object>(
   args: string
 ): T {
   const pattern = Reflect.getMetadata(ARGS_PATTERN, argsClass);
-  // FIXME: Negative match index returns original string, need just array of
-  // matches
   const matches = args.match(pattern);
+  if (!matches) {
+    throw new Error("Args don't match pattern");
+  }
+
+  // Get just capture groups from matches
+  const groups = Array.from(matches).slice(1);
   const instance = new argsClass();
   const properties = Reflect.getMetadataKeys(instance);
 
   for (const property of properties) {
     const { serializer, matchIndex } = Reflect.getMetadata(property, instance);
-    const value = serializer(matches[matchIndex + 1]);
+    const value = serializer(groups[matchIndex]);
     Object.defineProperty(instance, property, { value, enumerable: true });
   }
 
