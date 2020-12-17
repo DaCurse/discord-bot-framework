@@ -11,7 +11,7 @@ export function parseArgs<T extends object>(
   }
 
   // Get just capture groups from matches
-  const groups = Array.from(matches).slice(1);
+  const groups = matches.slice(1);
   const instance = new argsClass();
   const properties = Reflect.getMetadataKeys(instance);
 
