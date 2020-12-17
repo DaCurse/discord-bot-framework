@@ -16,3 +16,4 @@ export const Arg = createArgDecorator<string>((raw: string) => raw);
 export const IntArg = createArgDecorator<number>((raw: string) =>
   parseInt(raw, 10)
 );
+export const NumberArg = createArgDecorator<number>(Number);
